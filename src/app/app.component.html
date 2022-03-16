@@ -90,7 +90,14 @@
                     </button>
                   </span>
                 </p>
-                <div class="task__list-level" [ngClass]="{ active: true }">
+                <div
+                  class="task__list-level"
+                  [ngClass]="{
+                    easy_level: task.level === 'easy',
+                    medium_level: task.level === 'medium',
+                    hard_level: task.level === 'hard'
+                  }"
+                >
                   {{ task.level }}
                 </div>
               </ng-container>
@@ -122,7 +129,16 @@
                     </button>
                   </span>
                 </p>
-                <div class="task__list-level">{{ task.level }}</div>
+                <div
+                  class="task__list-level"
+                  [ngClass]="{
+                    easy_level: task.level === 'easy',
+                    medium_level: task.level === 'medium',
+                    hard_level: task.level === 'hard'
+                  }"
+                >
+                  {{ task.level }}
+                </div>
               </ng-container>
             </li>
           </ul>
